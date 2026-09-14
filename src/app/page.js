@@ -1,6 +1,51 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+// import profile from "../../public";
+
+const skillCategories = [
+  {
+    id: "frontend",
+    category: "Frontend",
+    title: "Frontend",
+    shortLabel: "Dasar Web",
+    accent: "violet",
+    techs: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+    tools: ["VS Code", "Git", "GitHub", "Figma"],
+  },
+  {
+    id: "backend",
+    category: "Backend",
+    title: "Backend",
+    shortLabel: "API & Logic",
+    accent: "green",
+    techs: ["Node.js", "Next.js API", "Laravel", "REST API", "Python"],
+    tools: ["Postman", "VS Code", "GitHub", "Vercel"],
+  },
+  {
+    id: "data",
+    category: "Data",
+    title: "Data Analysis",
+    shortLabel: "Insight & Data",
+    accent: "cyan",
+    techs: ["SQL", "Python", "Excel", "Data Visualization", "Analytics"],
+    tools: ["Power BI", "Jupyter", "VS Code", "GitHub"],
+  },
+  {
+    id: "design",
+    category: "Design",
+    title: "Design & UI",
+    shortLabel: "Visual Thinking",
+    accent: "pink",
+    techs: ["Figma", "UI Design", "Responsive Design", "Wireframe", "UX"],
+    tools: ["Figma", "Adobe Photoshop", "Adobe Illustrator", "VS Code"],
+  },
+];
+
 export default function Home() {
+  const [activeSkill, setActiveSkill] = useState(skillCategories[0]);
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#090611] text-purple-50">
       {/* Navbar */}
@@ -18,11 +63,13 @@ export default function Home() {
           />
           </a>
 
-          <div className="flex items-center gap-9 rounded-full border border-purple-300/15 bg-white/[0.04] px-6 py-3 text-sm font-medium text-purple-500 backdrop-blur-md">
-            <a className="transition hover:text-purple-300 hover:bord" href="#tentang">Tentang</a>
-            <a className="transition hover:text-purple-300" href="#proyek">Proyek</a>
+          <div className="flex items-center gap-9 rounded-full border border-purple-300/15 bg-white/[0.04] px-8 py-3 text-sm font-medium text-purple-500 backdrop-blur-md">
+            <a className="transition hover:text-purple-300 hover:" href="#tentang">Tentang</a>
+            <a className="transition hover:text-purple-300" href="#minat">Minat</a>
             <a className="transition hover:text-purple-300" href="#skills">Skills</a>
-            <a className="transition hover:text-purple-300" href="#pengalaman">Pengalaman</a>
+            <a className="transition hover:text-purple-300" href="#tools">Tools</a>
+            <a className="transition hover:text-purple-300" href="#proyek">Proyek</a>
+            <a className="transition hover:text-purple-300" href="#blog">Blog</a>
           </div>
           
           <a href="mailto:okiramadhan120@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-400/40 px-6 py-3 text-sm font-semibold text-purple-200 transition hover:border-purple-300 hover:bg-purple-400/10 backdrop-blur-sm hover:backdrop-blur-md">
@@ -34,24 +81,24 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative mx-auto grid min-h-screen w-full max-w-7xl grid-cols-[1.15fr_0.85fr] items-center gap-16 px-12 mt-20">
+      <section className="mx-auto grid w-full max-w-7xl grid-cols-[1.7fr_1.2fr] gap-20 px-12 py-32">
         <div aria-hidden="true" className="absolute left-0 top-24 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl"/>
         <div aria-hidden="true" className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-fuchsia-500/15 blur-3xl"/>
 
         <div className="relative">
           <p className="mb-6 text-sm font-semibold uppercase tracking-[0.32em] text-purple-400">
-            Portfolio / 2026
+            Portofolio / 2026
           </p>
 
-          <h1 className="text-7xl font-bold leading-[1.02] tracking-tight text-white hover:text-purple-200">Oki<br />Ramadhan<span className="text-purple-400">.</span>
+          <h1 className="text-3xl font-bold leading-[1.02] tracking-tight text-white hover:text-purple-200">Oki Ramadhan<span className="text-purple-400">.</span>
           </h1>
 
-          <p className="mt-7 text-3xl font-medium text-purple-200">
-            Frontend Developer
+          <p className="mt-7 text-4xl font-medium text-purple-200">
+            Web Developer | Designed Streetwear | Data Analyst
           </p>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-purple-200 hover:text-white">
-            Saya adalah mahasiswa Teknologi Informasi semester akhir yang memadukan keahlian coding JavaScript dan logika database dengan desain Figma untuk membangun aplikasi web yang modern serta fungsional.
+          <p className="mt-6 max-w-xl text-lg leading-8 text-purple-200 hover:text-white text-justify">
+            Hai! Saya Oki Ramadhan, Halo! Saya mahasiswa akhir Teknologi Informasi yang suka ngulik kode dalam pengembangan web modern dengan fokus yang semakin berkembang pada kecerdasan buatan. 
           </p>
 
           <div className="mt-10 flex gap-4">
@@ -63,10 +110,11 @@ export default function Home() {
             </a>
           </div>
         </div>
+
         <div className="relative">
           <div className="relative h-[560px]">
             <Image
-              src="/foto-profil.png"
+              src="/foto-profil2.png"
               alt="Foto profil Oki Ramadhan"
               fill
               preload
@@ -82,12 +130,8 @@ export default function Home() {
               <div className="mt-3 flex items-end justify-between">
                 <div>
                   <h2 className="text-3xl font-semibold text-white">Oki Ramadhan</h2>
-                  <p className="mt-1 text-purple-100/70">Frontend Developer</p>
+                  <p className="mt-1 text-purple-100/70">Web Developer | Designed Streetwear | Data Analyst</p>
                 </div>
-
-                <span className="rounded-full border border-purple-300/30 bg-purple-400/10 px-3 py-2 text-sm text-purple-100">
-                  01 / 01
-                </span>
               </div>
             </div>
           </div>
@@ -108,8 +152,7 @@ export default function Home() {
 
             <div className="mt-10 rounded-3xl border border-violet-400/15 bg-violet-400/[0.05] p-6">
               <p className="text-sm leading-7 text-violet-100/65">
-                Saat ini saya terbuka untuk kolaborasi, proyek freelance, dan
-                kesempatan untuk berkembang bersama tim yang tepat.
+                Sebagai mahasiswa tingkat akhir, saya siap terjun langsung ke dunia kerja. Saat ini saya terbuka untuk posisi magang, atau kesempatan apa pun yang bisa mengasah keahlian saya.
               </p>
 
               <a
@@ -122,40 +165,21 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="text-xl leading-9 text-violet-100/75">
-              Saya adalah mahasiswa Teknologi Informasi yang berfokus pada
-              pengembangan frontend. Saya menikmati proses menggabungkan logika
-              pemrograman, desain antarmuka, dan kebutuhan pengguna menjadi website
-              yang fungsional.
-            </p>
-
-            <p className="mt-6 text-lg leading-8 text-violet-100/55">
-              Dengan JavaScript, Next.js, Tailwind CSS, serta Figma, saya membangun
-              antarmuka yang bersih, responsif, dan mudah digunakan. Saya percaya
-              bahwa desain yang baik harus membantu pengguna mencapai tujuan mereka
-              dengan lebih mudah.
+            <p className="text-xl text-justify leading-9 text-violet-100/75">
+              Mahasiswa Teknologi Informasi semester 7 dengan minat pada Web Development dan Data Analysis. Berpengalaman dalam membangun proyek website responsif serta memiliki fondasi kuat dalam pengolahan dan analisis data untuk menghasilkan insight yang berdampak. Terampil menggunakan Figma dan Adobe Photoshop untuk kebutuhan desain visual. Berkomitmen untuk terus mengembangkan kemampuan di bidang teknologi informasi.
             </p>
 
             <div className="mt-14 grid grid-cols-3 gap-5">
               <article className="rounded-2xl border border-violet-400/15 bg-white/[0.03] p-6">
-                <p className="text-3xl font-bold text-white">20XX</p>
-                <p className="mt-2 text-sm text-violet-100/55">
-                  Mulai belajar web development
-                </p>
+                <Image src="/icons-coding1.png" alt="icons-coding" width={500} height={500} />
               </article>
 
               <article className="rounded-2xl border border-violet-400/15 bg-white/[0.03] p-6">
-                <p className="text-3xl font-bold text-white">XX+</p>
-                <p className="mt-2 text-sm text-violet-100/55">
-                  Proyek yang dikerjakan
-                </p>
+                <Image src="/icons-design.png" alt="icons-coding" width={500} height={500} />
               </article>
 
               <article className="rounded-2xl border border-violet-400/15 bg-white/[0.03] p-6">
-                <p className="text-3xl font-bold text-white">XX</p>
-                <p className="mt-2 text-sm text-violet-100/55">
-                  Teknologi yang dipelajari
-                </p>
+                <Image src="/icons-expanding.png" alt="icons-coding" width={500} height={500} />
               </article>
             </div>
           </div>
@@ -172,41 +196,21 @@ export default function Home() {
               </p>
 
               <h2 className="mt-5 text-5xl font-bold tracking-tight text-white">
-                Hal yang Saya Nikmati
+                Fokus & Minat Saya
               </h2>
             </div>
 
             <p className="max-w-md text-right text-lg leading-8 text-violet-100/55">
-              Tiga area yang terus saya pelajari untuk membangun produk digital yang
-              lebih baik.
+              Tiga hal yang bikin seru ulik demi bikin produk digital yang gak cuma menarik, tapi juga bermanfaat.
             </p>
           </div>
 
           <div className="mt-14 grid grid-cols-3 gap-6">
-            <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-fuchsia-400/50 hover:bg-fuchsia-400/[0.06]">
-              <p className="text-sm font-semibold text-fuchsia-300">01</p>
-
-              <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-400/10 text-3xl text-fuchsia-300">
-                ✦
-              </div>
-
-              <h3 className="mt-8 text-3xl font-semibold text-white">Design</h3>
-
-              <p className="mt-4 leading-7 text-violet-100/60">
-                Menciptakan antarmuka yang bersih, menarik, dan mudah dipahami oleh
-                pengguna.
-              </p>
-
-              <p className="mt-8 text-sm font-medium text-fuchsia-300">
-                UI Design · Figma · User Experience
-              </p>
-            </article>
-
             <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-violet-400/60 hover:bg-violet-400/[0.08]">
               <p className="text-sm font-semibold text-violet-300">02</p>
 
               <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-400/10 text-3xl text-violet-300">
-                {"</>"}
+                💻
               </div>
 
               <h3 className="mt-8 text-3xl font-semibold text-white">
@@ -214,31 +218,47 @@ export default function Home() {
               </h3>
 
               <p className="mt-4 leading-7 text-violet-100/60">
-                Mengubah rancangan menjadi aplikasi web yang cepat, responsif, dan
-                fungsional.
+              memastikan sistem di belakang layar dapat mengolah data dengan logis dan aman, sekaligus menjaga transisi di sisi pengguna tetap berjalan mulus dan tanpa hambatan.
               </p>
 
               <p className="mt-8 text-sm font-medium text-violet-300">
-                JavaScript · React · Next.js
+                HTML · CSS · JavaScript · Python · Next.js · Laravel
               </p>
             </article>
-
+            
             <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:bg-cyan-400/[0.05]">
               <p className="text-sm font-semibold text-cyan-300">03</p>
 
               <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl text-cyan-300">
-                ↗
+                📊
               </div>
 
-              <h3 className="mt-8 text-3xl font-semibold text-white">Expanding</h3>
+              <h3 className="mt-8 text-3xl font-semibold text-white">Data Analyst</h3>
 
               <p className="mt-4 leading-7 text-violet-100/60">
-                Terus mengeksplorasi teknologi, cara kerja baru, dan ide yang dapat
-                memperluas kemampuan saya.
+              Mengolah informasi untuk mencari tren dan menemukan insight berharga yang bisa membantu pengambilan keputusan baik untuk performa web maupun memahami apa yang lagi disukai pasar.
               </p>
 
               <p className="mt-8 text-sm font-medium text-cyan-300">
-                Learning · Exploration · Growth
+                Data Analytics · SQL · Data Visualization · Insight
+              </p>
+            </article>
+
+            <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-fuchsia-400/50 hover:bg-fuchsia-400/[0.06]">
+              <p className="text-sm font-semibold text-fuchsia-300">01</p>
+
+              <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-400/10 text-3xl text-fuchsia-300">
+                🎨
+              </div>
+
+              <h3 className="mt-8 text-3xl font-semibold text-white">Design</h3>
+
+              <p className="mt-4 leading-7 text-violet-100/60">
+                Gak cuma bikin tampilan web yang rapi dan nyaman dipakai, saya juga suka menuangkan kreativitas ke dunia fashion lewat desain streetwear, mengeksplorasi visual, baik di atas layar digital maupun di media pakaian.
+              </p>
+
+              <p className="mt-8 text-sm font-medium text-fuchsia-300">
+                Adobe Illustrator · Adobe Photoshop · Figma 
               </p>
             </article>
           </div>
@@ -248,115 +268,90 @@ export default function Home() {
       {/* Skills */}
       <section id="skills" className="border-t border-violet-400/10">
         <div className="mx-auto w-full max-w-7xl px-12 py-32">
-          <div className="grid grid-cols-[0.8fr_1.2fr] gap-20">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
-                03 / Skills
-              </p>
+          <div className="grid grid-cols gap-20">
+            <div className="flex items-end justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
+                  03 / Skills
+                </p>
 
-              <h2 className="mt-5 text-5xl font-bold leading-tight tracking-tight text-white">
-                Teknologi yang Saya Gunakan
-              </h2>
-
-              <p className="mt-7 max-w-md text-lg leading-8 text-violet-100/60">
-                Skills yang saya gunakan untuk merancang, membangun, dan
-                mempublikasikan aplikasi web.
-              </p>
-
-              <div className="mt-12 inline-flex items-center gap-3 rounded-full border border-violet-400/20 bg-violet-400/10 px-5 py-3 text-sm text-violet-200">
-                <span className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_12px_#a78bfa]" />
-                Terus belajar dan berkembang
+                <h2 className="mt-5 text-5xl font-bold tracking-tight text-white">
+                  Keterampilan & Keahlian
+                </h2>
               </div>
+
+              <p className="max-w-md text-right text-lg leading-8 text-violet-100/55">
+                Jelajahi keahlian teknis saya di beberapa bidang. Silakan pilih kategori di bawah untuk melihat teknologi dan alat bantu yang saya gunakan.
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <article className="rounded-3xl border border-violet-400/15 bg-white/[0.03] p-7">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-400">
-                  Frontend
-                </p>
+              {skillCategories.map((skill) => (
+                <button
+                  key={skill.id}
+                  type="button"
+                  onClick={() => setActiveSkill(skill)}
+                  className={`rounded-3xl border p-7 text-left transition duration-300 hover:-translate-y-1 hover:bg-violet-400/10 ${
+                    activeSkill.id === skill.id
+                      ? "border-violet-300 bg-violet-400/20 shadow-[0_0_25px_rgba(168,85,247,0.2)]"
+                      : "border-violet-400/15 bg-white/[0.03]"
+                  }`}
+                >
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-400">
+                    {skill.category}
+                  </p>
 
-                <h3 className="mt-5 text-2xl font-semibold text-white">
-                  Dasar Web
-                </h3>
+                  <h3 className="mt-5 text-2xl font-semibold text-white">
+                    {skill.shortLabel}
+                  </h3>
 
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <span className="rounded-full bg-violet-400/10 px-4 py-2 text-sm text-violet-200">
-                    HTML
-                  </span>
-                  <span className="rounded-full bg-violet-400/10 px-4 py-2 text-sm text-violet-200">
-                    CSS
-                  </span>
-                  <span className="rounded-full bg-violet-400/10 px-4 py-2 text-sm text-violet-200">
-                    JavaScript
-                  </span>
-                </div>
-              </article>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    {skill.techs.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-violet-400/10 px-4 py-2 text-sm text-violet-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
 
-              <article className="rounded-3xl border border-violet-400/15 bg-white/[0.03] p-7">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-fuchsia-300">
-                  Framework
-                </p>
-
-                <h3 className="mt-5 text-2xl font-semibold text-white">
-                  Modern Stack
-                </h3>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <span className="rounded-full bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-200">
-                    React
-                  </span>
-                  <span className="rounded-full bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-200">
-                    Next.js
-                  </span>
-                  <span className="rounded-full bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-200">
-                    Tailwind CSS
-                  </span>
-                </div>
-              </article>
-
-              <article className="rounded-3xl border border-violet-400/15 bg-white/[0.03] p-7">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                  Tools
-                </p>
-
-                <h3 className="mt-5 text-2xl font-semibold text-white">
-                  Workflow
-                </h3>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <span className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">
-                    Git
-                  </span>
-                  <span className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">
-                    GitHub
-                  </span>
-                  <span className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">
-                    VS Code
-                  </span>
-                </div>
-              </article>
-
-              <article className="rounded-3xl border border-violet-400/15 bg-gradient-to-br from-violet-500/15 to-fuchsia-500/5 p-7">
+          <div className="mt-8 rounded-3xl border border-violet-400/20 bg-violet-500/[0.06] p-8">
+            <div className="flex flex-wrap items-center justify-between gap-6">
+              <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-300">
-                  Design
+                  Kategori aktif
                 </p>
-
-                <h3 className="mt-5 text-2xl font-semibold text-white">
-                  Visual Thinking
+                <h3 className="mt-2 text-3xl font-semibold text-white">
+                  {activeSkill.title}
                 </h3>
+              </div>
 
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-violet-100">
-                    Figma
+              <div className="flex flex-wrap gap-3">
+                {activeSkill.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-violet-300/30 bg-white/[0.03] px-4 py-2 text-sm text-violet-100"
+                  >
+                    {tool}
                   </span>
-                  <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-violet-100">
-                    UI Design
-                  </span>
-                  <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-violet-100">
-                    Responsive Design
-                  </span>
-                </div>
-              </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {activeSkill.techs.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full bg-violet-400/10 px-4 py-2 text-sm font-medium text-violet-200"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         </div>
