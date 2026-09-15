@@ -185,7 +185,7 @@ export default function Home() {
               </p>
 
               <h2 className="mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
-                Fokus & Minat Saya
+                Fokus & Minat
               </h2>
             </div>
 
@@ -195,8 +195,9 @@ export default function Home() {
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {/* Development */}
             <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-violet-400/60 hover:bg-violet-400/[0.08]">
-              <p className="text-sm font-semibold text-violet-300">02</p>
+              <p className="text-sm font-semibold text-violet-300">01</p>
 
               <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-400/10 text-3xl text-violet-300">
                 💻
@@ -215,8 +216,9 @@ export default function Home() {
               </p>
             </article>
 
+            {/* Data Analyst */}
             <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:bg-cyan-400/[0.05]">
-              <p className="text-sm font-semibold text-cyan-300">03</p>
+              <p className="text-sm font-semibold text-cyan-300">02</p>
 
               <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl text-cyan-300">
                 📊
@@ -233,8 +235,9 @@ export default function Home() {
               </p>
             </article>
 
+            {/* Design */}
             <article className="group rounded-3xl border border-violet-400/15 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-2 hover:border-fuchsia-400/50 hover:bg-fuchsia-400/[0.06]">
-              <p className="text-sm font-semibold text-fuchsia-300">01</p>
+              <p className="text-sm font-semibold text-fuchsia-300">03</p>
 
               <div className="mt-16 flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-400/10 text-3xl text-fuchsia-300">
                 🎨
@@ -336,7 +339,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-12">
+          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-12">
             {/* Reservasi lapangan */}
             <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-7">
               <Image
@@ -381,6 +384,60 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-[#090611]/30 to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 p-8">
+                <p className="text-sm font-semibold text-fuchsia-600">02 / PERSONAL</p>
+                <h3 className="mt-2 text-3xl font-semibold text-white">
+                  Visual Design MASO
+                </h3>
+                <p className="mt-2 mb-6 text-purple-100/65">
+                  Sebuah galeri digital yang merangkum kumpulan eksplorasi desain visual, tempat saya menuangkan ide kretif, ekspresi rasa, dan emosi ke dalam bentuk estetika layar.
+                </p>
+
+                <a href="https://mas-o-rgb.github.io/Mas-O/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacfoxjZPakl3vrui7gS4j9uOierEeC0uCqZEBic9PuJ5IW48SCOpvll4wRHPA_aem_f0dl-WihARqFAaQOWCUI3g" className="p-3 font-semibold text-purple-600 transition hover:text-fuchsia-300 rounded-3xl border border-purple-600 hover:border-fuchsia-300 border-2 mt-4">
+                  Lihat proyek <span className="ml-2">↗</span>
+                </a>
+              </div>
+            </article>
+
+            {/* Var */}
+            <article className="group relative col-span-1 h-[330px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-12">
+              <Image
+                src="/CoverDepanBukuTataSurya2.jpg"
+                alt="Tampilan proyek task management"
+                fill
+                sizes="1140px"
+                className="object-cover transition duration-700 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-r from-[#090611] via-[#090611]/50 to-transparent" />
+
+              <div className="absolute left-0 top-0 flex h-full max-w-xl flex-col justify-end p-8">
+                <p className="text-sm font-semibold text-blue-500">03 / APP</p>
+                <h3 className="mt-2 text-3xl font-semibold text-white">
+                  Augmented Reality
+                </h3>
+                <p className="mt-3 leading-7 text-purple-100/65">
+                  Pemanfaatan Augmented Reality Dalam Visualisasi Tata Surya Sebagai Media Pembelajaran
+                </p>
+
+                <a href="/blog-var" className="mt-6 inline-flex items-center gap-2 font-semibold text-blue-500 transition hover:text-white">
+                  Lihat proyek <span>↗</span>
+                </a>
+              </div>
+            </article>
+            
+            {/* cooming-soon */}
+            <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-5">
+              <Image
+                src="/cooming-soon.jpg"
+                alt="Tampilan proyek portofolio"
+                fill
+                sizes="460px"
+                className="object-cover transition duration-700 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-[#090611]/30 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 p-8">
                 <p className="text-sm font-semibold text-fuchsia-300">02 / PERSONAL</p>
                 <h3 className="mt-2 text-3xl font-semibold text-white">
                   Visual Design MASO
@@ -395,10 +452,68 @@ export default function Home() {
               </div>
             </article>
 
-            {/* Var */}
-            <article className="group relative col-span-1 h-[330px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-12">
+            {/* cooming-soon */}
+            <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-7">
               <Image
-                src="/CoverDepanBukuTataSurya2.jpg"
+                src="/cooming-soon.jpg"
+                alt="Tampilan proyek dashboard"
+                fill
+                sizes="660px"
+                className="object-cover transition duration-700 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-[#090611]/30 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 p-8">
+                <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-green-400">01 / WEB APP</p>
+                    <h3 className="mt-2 text-3xl font-semibold text-white">
+                      Reservasi Lapangan
+                    </h3>
+                    <p className="mt-2 text-purple-100/65">
+                      Aplikasi manajemen pemesanan lapangan berbasis web dengan sistem jadwal real-time untuk mempermudah reservasi dan administrasi secara digital.
+                    </p>
+                  </div>
+
+                  <a href="https://reservasi-lapangan.vercel.app/" className="flex p-3 font-semibold text-green-400 transition hover:text-green-200 rounded-3xl border border-green-400 hover:border-green-200 border-2">
+                    Lihat proyek <span className="ml-2">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* cooming-soon */}
+            <article className="group relative col-span-1 h-[330px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-8">
+              <Image
+                src="/cooming-soon.jpg"
+                alt="Tampilan proyek task management"
+                fill
+                sizes="1140px"
+                className="object-cover transition duration-700 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-r from-[#090611] via-[#090611]/50 to-transparent" />
+
+              <div className="absolute left-0 top-0 flex h-full max-w-xl flex-col justify-end p-8">
+                <p className="text-sm font-semibold text-cyan-300">03 / APP</p>
+                <h3 className="mt-2 text-3xl font-semibold text-white">
+                  Augmented Reality
+                </h3>
+                <p className="mt-3 leading-7 text-purple-100/65">
+                  Pemanfaatan Augmented Reality Dalam Visualisasi Tata Surya Sebagai Media Pembelajaran
+                </p>
+
+                <a href="#" className="mt-6 inline-flex items-center gap-2 font-semibold text-cyan-300 transition hover:text-white">
+                  Lihat proyek <span>↗</span>
+                </a>
+              </div>
+            </article>
+
+            {/* cooming-soon */}
+            <article className="group relative col-span-1 h-[330px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-4">
+              <Image
+                src="/cooming-soon.jpg"
                 alt="Tampilan proyek task management"
                 fill
                 sizes="1140px"
@@ -587,15 +702,15 @@ export default function Home() {
             <div>
               <a href="#beranda" className="text-3xl font-bold tracking-tight text-white">
                 <a href="/" className="text-purple-500">
-            <Image
-              src="/logo-maso.png"
-              alt="logo-maso"
-              width={20}
-              height={20}
-              unoptimized
-              className="h-16 w-16 object-contain md:h-30 md:w-30"
-            />
-          </a>
+                  <Image
+                    src="/logo-maso.png"
+                    alt="logo-maso"
+                    width={0}
+                    height={0}
+                    unoptimized
+                    className="h-0 w-0 object-contain md:h-30 md:w-30"
+                  />
+                </a>
               </a>
 
               <p className="mt-5 max-w-xs leading-7 text-purple-100/55">
@@ -627,14 +742,14 @@ export default function Home() {
               </p>
 
               <div className="mt-5 grid grid-cols-2 gap-3 text-purple-100/60">
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">TikTok ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">Facebook ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">X ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">WhatsApp ↗</a>
-                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">YouTube ↗</a>
+                <a className="transition hover:text-white" href="https://github.com/Mas-O-rgb" target="_blank" rel="noreferrer">GitHub ↗</a>
+                <a className="transition hover:text-white" href="https://www.instagram.com/okirmdhnn/?hl=id" target="_blank" rel="noreferrer">Instagram ↗</a>
+                <a className="transition hover:text-white" href="https://www.linkedin.com/in/oki-ramadhan-83822a332/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a className="transition hover:text-white" href="https://www.tiktok.com/@okiramadhan0?lang=en" target="_blank" rel="noreferrer">TikTok ↗</a>
+                <a className="transition hover:text-white" href="https://www.facebook.com/oki.ramadhan.10/" target="_blank" rel="noreferrer">Facebook ↗</a>
+                <a className="transition hover:text-white" href="https://x.com/okirmdhnn" target="_blank" rel="noreferrer">X ↗</a>
+                <a className="transition hover:text-white" href="https://wa.me/6289529774360" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+                <a className="transition hover:text-white" href="https://www.youtube.com/@okirmdhnn" target="_blank" rel="noreferrer">YouTube ↗</a>
                 <a className="transition hover:text-white" href="mailto:okiramadhan120@gmail.com">Email ↗</a>
               </div>
             </div>
