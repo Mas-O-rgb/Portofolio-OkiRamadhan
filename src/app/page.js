@@ -312,11 +312,12 @@ export default function Home() {
             </div>
 
             <p className="max-w-md text-left text-base leading-7 text-purple-100/55 md:text-right md:text-lg md:leading-8">
-              Ringkasan
+              Bukan sekadar tumpukan proyek, ini adalah rekam jejak dalam memecahkan masalah melalui kode dan desain.
             </p>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-12">
+            {/* Reservasi lapangan */}
             <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-7">
               <Image
                 src="/reservasi-lapangan.png"
@@ -347,6 +348,7 @@ export default function Home() {
               </div>
             </article>
 
+            {/* Visual design */}
             <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-5">
               <Image
                 src="/visual-design-by-maso.png"
@@ -373,9 +375,10 @@ export default function Home() {
               </div>
             </article>
 
+            {/* Var */}
             <article className="group relative col-span-1 h-[330px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-12">
               <Image
-                src="/project-3.jpg"
+                src="/CoverDepanBukuTataSurya2.jpg"
                 alt="Tampilan proyek task management"
                 fill
                 sizes="1140px"
@@ -385,12 +388,12 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#090611] via-[#090611]/50 to-transparent" />
 
               <div className="absolute left-0 top-0 flex h-full max-w-xl flex-col justify-end p-8">
-                <p className="text-sm font-semibold text-cyan-300">03 / PRODUCTIVITY</p>
+                <p className="text-sm font-semibold text-cyan-300">03 / APP</p>
                 <h3 className="mt-2 text-3xl font-semibold text-white">
-                  Task Management App
+                  Augmented Reality
                 </h3>
                 <p className="mt-3 leading-7 text-purple-100/65">
-                  Aplikasi untuk mengatur tugas, menetapkan prioritas, dan memantau progres pekerjaan dalam satu tempat.
+                  Pemanfaatan Augmented Reality Dalam Visualisasi Tata Surya Sebagai Media Pembelajaran
                 </p>
 
                 <a href="#" className="mt-6 inline-flex items-center gap-2 font-semibold text-cyan-300 transition hover:text-white">
@@ -408,97 +411,130 @@ export default function Home() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-400">
-                06 / Blog
+                05 / Blog
               </p>
 
               <h2 className="mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
-                Catatan & Pembelajaran
+                Catatan / Artikel / Informasi
               </h2>
             </div>
 
-            <a href="#" className="inline-flex rounded-full border border-purple-400/30 px-5 py-3 text-sm font-semibold text-purple-200 transition hover:border-purple-300 hover:bg-purple-400/10">
+            <a href="/blog" className="inline-flex rounded-full border border-purple-400/30 px-5 py-3 text-sm font-semibold text-purple-200 transition duration-1000 hover:border-purple-300 hover:bg-purple-400/10">
               Lihat Semua Artikel →
             </a>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-            <article className="group overflow-hidden rounded-3xl border border-purple-400/15 bg-white/[0.03] transition duration-300 hover:-translate-y-2 hover:border-purple-400/50">
-              <div className="flex h-52 items-end bg-gradient-to-br from-violet-600/40 via-purple-900/30 to-[#090611] p-7">
-                <span className="rounded-full border border-purple-300/20 bg-white/10 px-3 py-1 text-xs font-semibold text-purple-200">
-                  Frontend
+            {/* wordpress */}
+            <article className="group overflow-hidden rounded-3xl border-4 border-purple-400/15 bg-white/[0.03] transition duration-700 hover:-translate-y-10 hover:border-purple-400/50">
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/wordpress.png"
+                  alt="Frontend article"
+                  fill
+                  sizes="420px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-transparent to-transparent" />
+                <span className="absolute left-7 bottom-7 rounded-full border border-purple-300/20 bg-white/10 px-3 py-1 text-xs font-semibold text-purple-200">
+                  Teknologi
                 </span>
               </div>
 
               <div className="p-7">
                 <p className="text-sm text-purple-100/50">
-                  12 Januari 2026 · 5 menit baca
+                  02 April 2026
                 </p>
 
                 <h3 className="mt-4 text-2xl font-semibold leading-snug text-white">
-                  Memulai Perjalanan Belajar Next.js untuk Pemula
+                  Mengenal Konsep Dasar IoT hingga Implementasi di Dunia Nyata
                 </h3>
 
                 <p className="mt-4 leading-7 text-purple-100/60">
-                  Catatan awal tentang hal-hal penting yang perlu dipahami saat mulai membangun aplikasi dengan Next.js.
+                  IoT bukan lagi sekadar tren teknologi, melainkan bagian yang tak terpisahkan dari kemudahan hidup manusia di masa depan.
                 </p>
 
-                <a href="#" className="mt-7 inline-flex items-center gap-2 font-semibold text-purple-300 transition group-hover:text-white">
+                <a href="https://belajariot1.wordpress.com/" className="mt-7 inline-flex items-center gap-2 font-semibold text-purple-300 transition group-hover:text-white">
                   Baca artikel <span>→</span>
                 </a>
               </div>
             </article>
 
-            <article className="group overflow-hidden rounded-3xl border border-purple-400/15 bg-white/[0.03] transition duration-300 hover:-translate-y-2 hover:border-fuchsia-400/50">
-              <div className="flex h-52 items-end bg-gradient-to-br from-fuchsia-600/35 via-purple-900/30 to-[#090611] p-7">
-                <span className="rounded-full border border-fuchsia-300/20 bg-white/10 px-3 py-1 text-xs font-semibold text-fuchsia-200">
-                  Design
+            {/* agustus kp pulo mangga */}
+            <article className="group overflow-hidden rounded-3xl border-4 border-purple-400/15 bg-white/[0.03] transition duration-700 hover:-translate-y-10 hover:border-purple-400/50">
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/agustus-kp-pulomangga.JPEG"
+                  alt="Frontend article"
+                  fill
+                  sizes="420px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-transparent to-transparent" />
+                <span className="absolute left-7 bottom-7 rounded-full border border-purple-300/20 bg-white/10 px-3 py-1 text-xs font-semibold text-purple-200">
+                  Masyarakat
                 </span>
               </div>
 
               <div className="p-7">
                 <p className="text-sm text-purple-100/50">
-                  26 Januari 2026 · 4 menit baca
+                  23 Agustus 2025
                 </p>
 
                 <h3 className="mt-4 text-2xl font-semibold leading-snug text-white">
-                  Membuat UI Dark Mode yang Tetap Nyaman Dibaca
+                  Bentuk Tanggung Jawab Dalam Berorganisasi Di Ruang Lingkup Masyarakat
                 </h3>
 
                 <p className="mt-4 leading-7 text-purple-100/60">
-                  Cara menggunakan warna, kontras, jarak, dan aksen neon tanpa membuat tampilan menjadi berlebihan.
+                  Organisasi (Karang Taruna) Akan berkembang Jika Seluruh anggota memiliki rasa Kesadaran penuh dalam menjalankan kewajibannya.
                 </p>
 
-                <a href="#" className="mt-7 inline-flex items-center gap-2 font-semibold text-fuchsia-300 transition group-hover:text-white">
+                <a href="https://www.kompasiana.com/afiffd9590/68a9d6e3ed641509307ac162/bentuk-tanggung-jawab-dalam-berorganisasi-di-ruang-lingkup-masyarakat?utm_source=Whatsapp&utm_medium=Refferal&utm_campaign=Sharing_Desktop" className="mt-7 inline-flex items-center gap-2 font-semibold text-purple-300 transition group-hover:text-white">
                   Baca artikel <span>→</span>
                 </a>
               </div>
             </article>
 
-            <article className="group overflow-hidden rounded-3xl border border-purple-400/15 bg-white/[0.03] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50">
-              <div className="flex h-52 items-end bg-gradient-to-br from-cyan-600/30 via-purple-900/30 to-[#090611] p-7">
-                <span className="rounded-full border border-cyan-300/20 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
-                  Productivity
+            {/* inovasi akademik */}
+            <article className="group overflow-hidden rounded-3xl border-4 border-purple-400/15 bg-white/[0.03] transition duration-700 hover:-translate-y-10 hover:border-purple-400/50">
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/inovasi-akademik.jpg"
+                  alt="Frontend article"
+                  fill
+                  sizes="420px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-transparent to-transparent" />
+                <span className="absolute left-7 bottom-7 rounded-full border border-purple-300/20 bg-white/10 px-3 py-1 text-xs font-semibold text-purple-200">
+                  Edukasi
                 </span>
               </div>
 
               <div className="p-7">
                 <p className="text-sm text-purple-100/50">
-                  08 Februari 2026 · 6 menit baca
+                  18 November 2025
                 </p>
 
                 <h3 className="mt-4 text-2xl font-semibold leading-snug text-white">
-                  Workflow Sederhana untuk Mengerjakan Project Web
+                  Pemanfaatan Prompt Engineering untuk Efisiensi Belajar
                 </h3>
 
                 <p className="mt-4 leading-7 text-purple-100/60">
-                  Workflow yang membantu saya mengatur ide, desain, kode, dan proses deploy dalam sebuah project.
+                  Kemampuan untuk berkomunikasi secara efektif dengan alat-alat generatif seperti Large Language Models (LLMs) telah menjadi skill penting, terutama di dunia akademik.
                 </p>
 
-                <a href="#" className="mt-7 inline-flex items-center gap-2 font-semibold text-cyan-300 transition group-hover:text-white">
+                <a href="https://medium.com/@m.amiryan.p/inovasi-akademik-universitas-bsi-sukses-edukasi-pemanfaatan-prompt-engineering-untuk-efisiensi-e05383271c3a" className="mt-7 inline-flex items-center gap-2 font-semibold text-purple-300 transition group-hover:text-white">
                   Baca artikel <span>→</span>
                 </a>
               </div>
             </article>
+          </div>
+
+          <div className=" gap-6 md:flex-row md:items-center md:items-center items-center mt-8">
+            <a href="/blog" className="inline-flex rounded-full border border-purple-400/30 px-5 py-3 text-sm font-semibold text-purple-200 transition duration-1000 hover:border-purple-300 hover:bg-purple-400/10">
+              Lihat Semua Artikel →
+            </a>
           </div>
         </div>
       </section>
