@@ -28,12 +28,13 @@ const skillCategories = [
 
 export default function Home() {
   const [activeSkill, setActiveSkill] = useState(skillCategories[0]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#090611] text-purple-50">
       {/* Navbar */}
-      <header className="inset-x-0 top-0 z-20 fixed backdrop-blur-md bg-[#090611]/50">
-        <nav className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 md:px-0">
-          <a href="#tentang" className="text-purple-500">
+      <header className="inset-x-0 top-0 z-20 fixed backdrop-blur-md bg-[#090611]/20">
+        <nav className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 md:px-10">
+          <a href="/" className="text-purple-500">
             <Image
               src="/logo-maso.png"
               alt="logo-maso"
@@ -44,21 +45,40 @@ export default function Home() {
             />
           </a>
 
-          <div className="hidden items-center gap-9 rounded-full border border-purple-300/15 bg-white/[0.04] px-8 py-3 text-sm font-medium text-purple-500 backdrop-blur-md md:flex">
+          <div className="hidden items-center gap-9 rounded-full border-2 border-purple-300/15 bg-white/[0.04] px-8 py-3 text-sm font-medium text-purple-500 backdrop-blur-md md:flex">
             <a className="transition hover:text-purple-300" href="#tentang">Tentang</a>
             <a className="transition hover:text-purple-300" href="#minat">Minat</a>
             <a className="transition hover:text-purple-300" href="#skills">Skills</a>
-            <a className="transition hover:text-purple-300" href="#tools">Tools</a>
             <a className="transition hover:text-purple-300" href="#proyek">Proyek</a>
             <a className="transition hover:text-purple-300" href="#blog">Blog</a>
           </div>
 
-          <a href="mailto:okiramadhan120@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-400/40 px-6 py-3 text-xs font-semibold text-purple-200 transition hover:border-purple-300 hover:bg-purple-400/10 backdrop-blur-sm hover:backdrop-blur-md md:text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="white">
-              <path d="M4 18L9 12M20 18L15 12M3 8L10.225 12.8166C10.8665 13.2443 11.1872 13.4582 11.5339 13.5412C11.8403 13.6147 12.1597 13.6147 12.4661 13.5412C12.8128 13.4582 13.1335 13.2443 13.775 12.8166L21 8M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span className="hidden md:inline">Mari Bicara Via Email</span>
-          </a>
+          <button
+            type="button"
+            aria-label={isMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl text-purple-200 border-4 border-teal-300/5 transition hover:border-purple-300 hover:bg-purple-400/10 md:hidden"
+          >
+            <span className="sr-only">Menu navigasi</span>
+            <span className="flex flex-col gap-1.5">
+              <span className="h-0.5 w-5 bg-current" />
+              <span className="h-0.5 w-5 bg-current" />
+              <span className="h-0.5 w-5 bg-current" />
+            </span>
+          </button>
+
+          {isMenuOpen && (
+            <div className="order-last w-full rounded-2xl border-2 border-purple-300/15 bg-[#090611]/10 p-4 text-sm font-medium text-purple-200 md:hidden">
+              <div className="flex flex-col gap-2">
+                <a className="rounded-xl px-4 py-3 transition hover:bg-purple-400/10 hover:text-purple-300" href="#tentang" onClick={() => setIsMenuOpen(false)}>Tentang</a>
+                <a className="rounded-xl px-4 py-3 transition hover:bg-purple-400/10 hover:text-purple-300" href="#minat" onClick={() => setIsMenuOpen(false)}>Minat</a>
+                <a className="rounded-xl px-4 py-3 transition hover:bg-purple-400/10 hover:text-purple-300" href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
+                <a className="rounded-xl px-4 py-3 transition hover:bg-purple-400/10 hover:text-purple-300" href="#proyek" onClick={() => setIsMenuOpen(false)}>Proyek</a>
+                <a className="rounded-xl px-4 py-3 transition hover:bg-purple-400/10 hover:text-purple-300" href="#blog" onClick={() => setIsMenuOpen(false)}>Blog</a>
+              </div>
+            </div>
+          )}
         </nav>
       </header>
 
@@ -419,9 +439,9 @@ export default function Home() {
               </h2>
             </div>
 
-            <a href="/blog" className="inline-flex rounded-full border border-purple-400/30 px-5 py-3 text-sm font-semibold text-purple-200 transition duration-1000 hover:border-purple-300 hover:bg-purple-400/10">
-              Lihat Semua Artikel →
-            </a>
+              <p className="max-w-md text-left text-base leading-7 text-purple-100/55 md:text-right md:text-lg md:leading-8">
+              Berbagi perspektif, pusing, senang dunia digital, sampai obrolan seputar edukasi dan sosial dari proses belajar sehari-hari.
+              </p>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -531,78 +551,11 @@ export default function Home() {
             </article>
           </div>
 
-          <div className=" gap-6 md:flex-row md:items-center md:items-center items-center mt-8">
-            <a href="/blog" className="inline-flex rounded-full border border-purple-400/30 px-5 py-3 text-sm font-semibold text-purple-200 transition duration-1000 hover:border-purple-300 hover:bg-purple-400/10">
+          <div className="inline-flex items-end">
+            <a href="/blog" className="rounded-full border-2 border-purple-400/30 px-5 py-3 text-sm font-semibold text-purple-200 transition duration-1000 hover:border-purple-300 hover:bg-purple-400/10 mt-8">
               Lihat Semua Artikel →
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Pesan */}
-      <section id="pesan" className="border-t border-purple-400/10 bg-purple-950/20">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 py-16 md:grid-cols-[0.8fr_1.2fr] md:gap-20 md:px-12 md:py-32">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-400">
-              07 / Pesan
-            </p>
-
-            <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-              Punya ide?
-              <br />
-              Mari bicara.
-            </h2>
-
-            <p className="mt-7 max-w-md text-base leading-7 text-purple-100/60 md:text-lg md:leading-8">
-              Jika ingin berdiskusi tentang project, kolaborasi, atau sekadar bertukar ide, kirimkan pesan melalui form ini.
-            </p>
-
-            <div className="mt-12 space-y-5">
-              <a href="mailto:okiramadhan120@gmail.com" className="block text-lg font-medium text-purple-200 transition hover:text-white">
-                okiramadhan120@gmail.com
-              </a>
-
-              <a href="#" className="block text-lg font-medium text-purple-200 transition hover:text-white">
-                GitHub ↗
-              </a>
-
-              <a href="#" className="block text-lg font-medium text-purple-200 transition hover:text-white">
-                LinkedIn ↗
-              </a>
-            </div>
-          </div>
-
-          <ContactForm className="rounded-3xl border border-purple-400/15 bg-white/[0.03] p-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div>
-                <label htmlFor="nama" className="text-sm font-semibold text-purple-100">Nama</label>
-                <input id="nama" name="nama" type="text" placeholder="Nama kamu" className="mt-3 w-full rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400" />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="text-sm font-semibold text-purple-100">Email</label>
-                <input id="email" name="email" type="email" placeholder="nama@email.com" className="mt-3 w-full rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400" />
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <label htmlFor="subjek" className="text-sm font-semibold text-purple-100">Subjek</label>
-              <input id="subjek" name="subjek" type="text" placeholder="Contoh: Tawaran kolaborasi project" className="mt-3 w-full rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400" />
-            </div>
-
-            <div className="mt-6">
-              <label htmlFor="pesan" className="text-sm font-semibold text-purple-100">Pesan</label>
-              <textarea id="pesan" name="pesan" rows="6" placeholder="Tuliskan pesan kamu di sini..." className="mt-3 w-full resize-none rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400" />
-            </div>
-
-            <button type="button" className="mt-8 rounded-full bg-purple-600 px-7 py-4 font-semibold text-white shadow-[0_0_30px_rgba(139,92,246,0.35)] transition hover:-translate-y-1 hover:bg-purple-500">
-              Kirim Pesan →
-            </button>
-
-            <p className="mt-5 text-sm text-purple-100/40">
-              Form ini masih tampilan frontend. Pengiriman pesan perlu dihubungkan ke layanan form atau API pada tahap berikutnya.
-            </p>
-          </ContactForm>
         </div>
       </section>
 
@@ -633,43 +586,63 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-12 py-14 md:grid-cols-3">
             <div>
               <a href="#beranda" className="text-3xl font-bold tracking-tight text-white">
-                OKI<span className="text-purple-400">.</span>
+                <a href="/" className="text-purple-500">
+            <Image
+              src="/logo-maso.png"
+              alt="logo-maso"
+              width={20}
+              height={20}
+              unoptimized
+              className="h-16 w-16 object-contain md:h-30 md:w-30"
+            />
+          </a>
               </a>
 
               <p className="mt-5 max-w-xs leading-7 text-purple-100/55">
-                Frontend Developer yang membangun pengalaman web modern dan fungsional.
+                “Cara terbaik untuk memprediksi masa depan adalah dengan menciptakannya.” 
+                <br/>
+                – Alan Kay
               </p>
             </div>
 
+            {/* Navigasi */}
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple-400">
                 Navigasi
               </p>
 
               <div className="mt-5 flex flex-col gap-3 text-purple-100/60">
-                <a className="transition hover:text-white" href="#tentang">Tentang</a>
-                <a className="transition hover:text-white" href="#proyek">Portfolio</a>
-                <a className="transition hover:text-white" href="#skills">Skills</a>
-                <a className="transition hover:text-white" href="#blog">Blog</a>
+                <a className="transition hover:text-purple-300" href="#tentang">Tentang</a>
+                <a className="transition hover:text-purple-300" href="#minat">Minat</a>
+                <a className="transition hover:text-purple-300" href="#skills">Skills</a>
+                <a className="transition hover:text-purple-300" href="#proyek">Proyek</a>
+                <a className="transition hover:text-purple-300" href="#blog">Blog</a>
               </div>
             </div>
 
+            {/* Sosmed */}
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple-400">
                 Sosial Media
               </p>
 
-              <div className="mt-5 flex flex-col gap-3 text-purple-100/60">
+              <div className="mt-5 grid grid-cols-2 gap-3 text-purple-100/60">
                 <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
+                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">TikTok ↗</a>
+                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">Facebook ↗</a>
                 <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">X ↗</a>
+                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+                <a className="transition hover:text-white" href="#" target="_blank" rel="noreferrer">YouTube ↗</a>
                 <a className="transition hover:text-white" href="mailto:okiramadhan120@gmail.com">Email ↗</a>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-3 border-t border-purple-400/10 py-7 text-sm text-purple-100/40 md:flex-row md:items-center md:justify-between">
-            <p>© Designed & built with TailwindCSS, JS, Next.js and a dash of by Oki Ramadhan.</p>
-            <p>Designed & built with Next.js.</p>
+            <p>© Designed & built with Next.js and a dash of by Oki Ramadhan.</p>
+            <p>2026.</p>
           </div>
         </div>
       </footer>
