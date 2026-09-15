@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function ContactForm() {
+export default function ContactForm({ className = "", children }) {
   const [status, setStatus] = useState("idle");
   const [messageStatus, setMessageStatus] = useState("");
 
@@ -36,63 +36,9 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-purple-400/15 bg-white/[0.03] p-8"
+      className={`rounded-3xl border border-purple-400/15 bg-white/[0.03] p-8 ${className}`}
     >
-      <div className="grid grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="nama" className="text-sm font-semibold text-purple-100">
-            Nama
-          </label>
-          <input
-            id="nama"
-            name="name"
-            required
-            placeholder="Nama kamu"
-            className="mt-3 w-full rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="text-sm font-semibold text-purple-100">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            placeholder="nama@email.com"
-            className="mt-3 w-full rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400"
-          />
-        </div>
-      </div>
-
-      <div className="mt-6">
-        <label htmlFor="subjek" className="text-sm font-semibold text-purple-100">
-          Subjek
-        </label>
-        <input
-          id="subjek"
-          name="subject"
-          required
-          placeholder="Contoh: Tawaran kolaborasi"
-          className="mt-3 w-full rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400"
-        />
-      </div>
-
-      <div className="mt-6">
-        <label htmlFor="pesan" className="text-sm font-semibold text-purple-100">
-          Pesan
-        </label>
-        <textarea
-          id="pesan"
-          name="message"
-          rows="6"
-          required
-          placeholder="Tuliskan pesan kamu..."
-          className="mt-3 w-full resize-none rounded-xl border border-purple-300/15 bg-[#090611]/70 px-4 py-4 text-purple-50 outline-none placeholder:text-purple-100/30 focus:border-purple-400"
-        />
-      </div>
+      {children}
 
       <input
         name="website"
