@@ -64,8 +64,8 @@ export default function VarBlogPage() {
 
       <article className="mx-auto w-full max-w-5xl px-4 py-12 md:px-12 md:py-20">
         <ol className="grid gap-5 md:grid-cols-2">
-          <a href="/Tata-Surya.apk" download className="mt-12 text-center rounded-full px-6 py-3 font-semibold text-white border-violet-300 bg-violet-500 shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:bg-violet-400 transition duration-300 hover:translate-y-3">
-          Download Aplikasi
+          <a href="https://drive.google.com/file/d/1qt6NF6OB04lPl4EKSV-cK-CHYGEgSJRo/view?usp=sharing" className="mt-12 text-center rounded-full px-6 py-3 font-semibold text-white border-violet-300 bg-violet-500 shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:bg-violet-400 transition duration-300 hover:translate-y-3">
+          Download Aplikasi Via GDrive
           </a>
           <a href="/Buku.pdf" download className="mt-12 text-center rounded-full px-6 py-3 font-semibold text-white border-violet-300 bg-violet-500 shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:bg-violet-400 transition duration-300 hover:translate-y-3">
           Download Buku AR Tata Surya
