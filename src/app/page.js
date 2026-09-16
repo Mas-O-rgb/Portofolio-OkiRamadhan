@@ -599,7 +599,7 @@ export default function Home() {
             <article className="group overflow-hidden rounded-3xl border-4 border-purple-400/15 bg-white/[0.03] transition duration-700 hover:-translate-y-10 hover:border-purple-400/50">
               <div className="relative h-52 overflow-hidden">
                 <Image
-                  src="/agustus-kp-pulomangga.JPEG"
+                  src="/agustus-kp-pulomangga.png"
                   alt="Frontend article"
                   fill
                   sizes="420px"
