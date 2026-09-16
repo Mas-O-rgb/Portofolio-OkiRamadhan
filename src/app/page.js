@@ -100,7 +100,7 @@ export default function Home() {
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-purple-200 hover:text-white text-justify">
-            Hai! Saya Oki Ramadhan, Halo! Saya mahasiswa akhir Teknologi Informasi yang suka ngulik kode dalam pengembangan web modern dengan fokus yang semakin berkembang pada kecerdasan buatan. 
+            Hai! Saya Oki Ramadhan, mahasiswa akhir Teknologi Informasi. Fokus utama saya adalah pengembangan web modern dan saat ini sedang mempelajari integrasi kecerdasan buatan (AI).
           </p>
 
           <div className="mt-10 flex gap-4">
@@ -152,7 +152,7 @@ export default function Home() {
               Tempat teknologi bertemu dengan imajinasi.
             </h2>
 
-            <div className="mt-4 rounded-3xl border border-violet-400/15 bg-violet-400/[0.05]md:p-0">
+            <div className="mt-4 rounded-3xl bg-violet-400/[0.05]md:p-0">
               <p className="text-sm leading-7 text-violet-100/65">
                 Sebagai mahasiswa tingkat akhir, saya siap membawa kombinasi keahlian teknis dan kreativitas visual ini ke industri profesional. Mari berkolaborasi dalam proyek Anda berikutnya!
               </p>
@@ -164,11 +164,11 @@ export default function Home() {
           </div>
 
           <div className="order-2 md:order-2">
-            <p className="text-base leading-7 text-justify text-violet-100/75 md:text-xl md:leading-9">
+            <p className="text-base leading-7 text-justify text-violet-100 md:text-xl md:leading-9">
               Halo! Saya mahasiswa Teknologi Informasi semester 7 yang punya ketertarikan besar di dunia Web Development, Data Analysis dan Visual Design. Selama kuliah, saya tidak hanya belajar teori, tetapi juga aktif membangun berbagai proyek website yang responsif. Sebagai mahasiswa tingkat akhir, saya siap terjun langsung ke dunia kerja. Saat ini saya terbuka untuk posisi magang, atau kesempatan apa pun yang bisa mengasah keahlian saya.
             </p>
             <br/>
-            <p className="text-base leading-7 text-justify text-violet-100/75 md:mt-0 md:text-xl md:leading-9">
+            <p className="text-base leading-7 text-justify text-violet-100 md:mt-0 md:text-xl md:leading-9">
               Bagi saya, fungsi teknis akan jauh lebih maksimal jika didukung oleh visual yang kuat. Karena itu, saya juga mengasah kemampuan desain seperti menggunakan Figma, Adobe Photoshop, Adobe Illustrator untuk memastikan setiap proyek yang saya kerjakan memiliki tampilan yang menarik. Selain merancang tampilan web yang menarik dan nyaman digunakan, saya juga senang mengeksplorasi kreativitas ke dunia fashion. Salah satunya lewat desain streetwear, di mana saya bisa bebas bereksperimen dengan visual baik di atas layar digital maupun langsung pada media pakaian.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function Home() {
                   onClick={() => setActiveSkill(skill)}
                   className={`rounded-3xl border p-7 transition duration-1000 hover:-translate-y-3 hover:bg-violet-400 ${
                     activeSkill.id === skill.id
-                      ? "border-violet-300 bg-violet-400/20 shadow-[0_0_25px_rgba(168,85,247,0.2)]"
+                      ? "border-violet-300 bg-violet-400/20 shadow-[0_0_25px_rgba(168,85,247,0.8)]"
                       : "border-violet-400/15 bg-white/[0.03]"
                   }`}
                 >
@@ -425,37 +425,10 @@ export default function Home() {
               </div>
             </article>
             
-            {/* cooming-soon */}
-            <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-5">
+            {/* pukul */}
+            <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-4">
               <Image
-                src="/cooming-soon.jpg"
-                alt="Tampilan proyek portofolio"
-                fill
-                sizes="460px"
-                className="object-cover transition duration-700 group-hover:scale-105"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-[#090611]/30 to-transparent" />
-
-              <div className="absolute inset-x-0 bottom-0 p-8">
-                <p className="text-sm font-semibold text-fuchsia-300">02 / PERSONAL</p>
-                <h3 className="mt-2 text-3xl font-semibold text-white">
-                  Visual Design MASO
-                </h3>
-                <p className="mt-2 mb-6 text-purple-100/65">
-                  Sebuah galeri digital yang merangkum kumpulan eksplorasi desain visual, tempat saya menuangkan ide kretif, ekspresi rasa, dan emosi ke dalam bentuk estetika layar.
-                </p>
-
-                <a href="https://l.instagram.com/?u=https%3A%2F%2Fmas-o-rgb.github.io%2FMas-O%2F%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafkZMOYeeBkOxv2vwgsvyymKulGAAtvBbhswS451gKywSLjSb9geV18XaGfsg_aem_tlNxGn-_XpoaVFMQbAelpQ&e=AUDWvRvUxLcP1ySlyTHJokKNWzR33f4BczhU0DOw9-FTjoZbjPt59mHva_Ax44DLZ__fXugaxKulF_9DbpQkfP1vonoP2IXclIFWpNBn21NSyaR9I_uu9jPaqxlW1hAJQwg5aIqkSmaGip9Y8I3Sj_4" className="p-3 font-semibold text-purple-600 transition hover:text-fuchsia-300 rounded-3xl border border-purple-600 hover:border-fuchsia-300 border-2 mt-4">
-                  Lihat proyek <span className="ml-2">↗</span>
-                </a>
-              </div>
-            </article>
-
-            {/* cooming-soon */}
-            <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-7">
-              <Image
-                src="/cooming-soon.jpg"
+                src="/pukul.png"
                 alt="Tampilan proyek dashboard"
                 fill
                 sizes="660px"
@@ -467,19 +440,46 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                   <div>
-                    <p className="text-sm font-semibold text-green-400">01 / WEB APP</p>
+                    <p className="text-sm font-semibold text-green-400">04 / INTERACTIVE APP</p>
                     <h3 className="mt-2 text-3xl font-semibold text-white">
-                      Reservasi Lapangan
+                      Mini Game
                     </h3>
                     <p className="mt-2 text-purple-100/65">
-                      Aplikasi manajemen pemesanan lapangan berbasis web dengan sistem jadwal real-time untuk mempermudah reservasi dan administrasi secara digital.
+                      Game web sederhana berbasis ketangkasan untuk menguji kecepatan reaksi pemain dalam memukul target yang muncul secara acak.
                     </p>
                   </div>
 
-                  <a href="https://reservasi-lapangan.vercel.app/" className="flex p-3 font-semibold text-green-400 transition hover:text-green-200 rounded-3xl border border-green-400 hover:border-green-200 border-2">
+                  <a href="https://pukul-gue.vercel.app/" className="flex p-3 font-semibold text-green-400 transition hover:text-green-200 rounded-3xl border border-green-400 hover:border-green-200 border-2">
                     Lihat proyek <span className="ml-2">↗</span>
                   </a>
                 </div>
+              </div>
+            </article>
+
+            {/* wafro bakery */}
+            <article className="group relative h-[480px] overflow-hidden rounded-3xl border border-purple-400/20 bg-purple-950/40 md:col-span-8">
+              <Image
+                src="/wafro-bakery.png"
+                alt="Tampilan proyek portofolio"
+                fill
+                sizes="460px"
+                className="object-cover transition duration-700 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#090611] via-[#090611]/30 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 p-8">
+                <p className="text-sm font-semibold text-fuchsia-300">05 / ONLINE STORE</p>
+                <h3 className="mt-2 text-3xl font-semibold text-white">
+                  Wafro Bakery E-Commerce
+                </h3>
+                <p className="mt-2 mb-6 text-purple-100/65">
+                  "Sebuah aplikasi web penjualan toko roti online yang dirancang untuk memberikan pengalaman belanja hidangan penutup yang mulus dan responsif.
+                </p>
+
+                <a href="" className="p-3 font-semibold text-purple-600 transition hover:text-fuchsia-300 rounded-3xl border border-purple-600 hover:border-fuchsia-300 border-2 mt-4">
+                  Lihat proyek <span className="ml-2">↗</span>
+                </a>
               </div>
             </article>
 
